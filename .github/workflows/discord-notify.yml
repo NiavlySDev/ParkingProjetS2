@@ -1,0 +1,111 @@
+name: Discord - Updates (push + PR)
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord message
+        env:
+          WH_UPDATES: ${{ secrets.DISCORD_WEBHOOK_UPDATES }}
+          WH_SYLVAIN: ${{ secrets.DISCORD_WEBHOOK_SYLVAIN }}
+          WH_PHILY: ${{ secrets.DISCORD_WEBHOOK_PHILY }}
+          WH_ETHAN: ${{ secrets.DISCORD_WEBHOOK_ETHAN }}
+          WH_VIRGILE: ${{ secrets.DISCORD_WEBHOOK_VIRGILE }}
+
+          PING_UPDATES: ${{ secrets.DISCORD_PING_UPDATES }}
+          PING_SYLVAIN: ${{ secrets.DISCORD_PING_SYLVAIN }}
+          PING_PHILY: ${{ secrets.DISCORD_PING_PHILY }}
+          PING_ETHAN: ${{ secrets.DISCORD_PING_ETHAN }}
+          PING_VIRGILE: ${{ secrets.DISCORD_PING_VIRGILE }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+
+          def post(url, content):
+            if not url: return
+            payload = {
+              "content": content[:1900],
+              "allowed_mentions": {"parse": ["roles"]}
+            }
+            data = json.dumps(payload).encode("utf-8")
+            req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+            urllib.request.urlopen(req).read()
+
+          def ping(p): return (p.strip() + "\n") if p and p.strip() else ""
+
+          repo = os.environ.get("GITHUB_REPOSITORY","")
+          actor = os.environ.get("GITHUB_ACTOR","")
+          event = os.environ.get("GITHUB_EVENT_NAME","")
+          ref = os.environ.get("GITHUB_REF_NAME","")
+          server = os.environ.get("GITHUB_SERVER_URL","https://github.com")
+          sha = os.environ.get("GITHUB_SHA","")[:7]
+
+          wh_updates = os.environ.get("WH_UPDATES","")
+          p_updates  = os.environ.get("PING_UPDATES","")
+
+          wh_branch = {
+            "sylvain": (os.environ.get("WH_SYLVAIN",""), os.environ.get("PING_SYLVAIN","")),
+            "phily":   (os.environ.get("WH_PHILY",""),   os.environ.get("PING_PHILY","")),
+            "ethan":   (os.environ.get("WH_ETHAN",""),   os.environ.get("PING_ETHAN","")),
+            "virgile": (os.environ.get("WH_VIRGILE",""), os.environ.get("PING_VIRGILE","")),
+          }
+
+          # Charge le payload GitHub
+          path = os.environ["GITHUB_EVENT_PATH"]
+          with open(path, "r", encoding="utf-8") as f:
+            e = json.load(f)
+
+          def send_updates(msg):
+            post(wh_updates, ping(p_updates) + msg)
+
+          def send_branch(branch, msg):
+            if branch in wh_branch:
+              wh, p = wh_branch[branch]
+              if wh:
+                post(wh, ping(p) + msg)
+
+          if event == "push":
+            branch = ref
+            url_commit = f"{server}/{repo}/commit/{os.environ.get('GITHUB_SHA','')}"
+            msg = f"📌 PUSH sur `{branch}` — **{actor}**\nRepo: `{repo}`\nCommit: `{sha}` {url_commit}"
+            send_updates(msg)
+            send_branch(branch, msg)
+
+          elif event == "pull_request":
+            pr = e.get("pull_request", {})
+            action = e.get("action","")
+            number = pr.get("number")
+            title = pr.get("title","")
+            url = pr.get("html_url","")
+            base = pr.get("base",{}).get("ref","")
+            head = pr.get("head",{}).get("ref","")
+            merged = pr.get("merged", False)
+
+            if action in ("opened","reopened"):
+              msg = f"🔀 PR OUVERTE #{number} `{head}` → `{base}`\n**{title}**\n{url}"
+            elif action == "synchronize":
+              msg = f"🔄 PR MISE A JOUR #{number} `{head}` → `{base}`\n**{title}**\n{url}"
+            elif action == "closed":
+              if merged:
+                msg = f"✅ PR MERGEE #{number} `{head}` → `{base}`\n**{title}**\n{url}"
+              else:
+                msg = f"🛑 PR FERMEE (non merge) #{number} `{head}` → `{base}`\n**{title}**\n{url}"
+            else:
+              msg = f"ℹ️ PR EVENT `{action}`\n{url}"
+
+            send_updates(msg)
+            send_branch(head, msg)
+
+          else:
+            send_updates(f"ℹ️ Event `{event}` sur `{repo}` par **{actor}**")
+          PY
