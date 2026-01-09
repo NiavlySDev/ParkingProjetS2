@@ -5,26 +5,35 @@ on:
     branches: [ sylvain, phily, ethan, virgile ]
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 
 jobs:
   pr:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout (needed for gh context)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Ensure PR exists + enable auto-merge
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
         run: |
           set -e
 
           BRANCH="${GITHUB_REF_NAME}"
 
+          echo "Branch: $BRANCH -> main"
+
           # Cherche une PR ouverte BRANCH -> main
           PR_NUMBER=$(gh pr list --head "$BRANCH" --base main --state open --json number -q '.[0].number' || true)
 
-          # Si pas de PR, on tente d'en créer une. S'il n'y a rien à merger, on sort proprement.
+          # Si pas de PR ouverte, on tente de la créer
           if [ -z "$PR_NUMBER" ]; then
+            echo "No open PR found, creating..."
             if gh pr create \
               --head "$BRANCH" \
               --base main \
@@ -36,7 +45,22 @@ jobs:
               echo "Rien à merger entre ${BRANCH} et main. OK."
               exit 0
             fi
+          else
+            echo "PR already exists: #$PR_NUMBER"
           fi
 
-          # Active l’auto-merge (fusionnera dès que la CI est OK)
-          gh pr merge "$PR_NUMBER" --auto --merge
+          echo "Enabling auto-merge on PR #$PR_NUMBER ..."
+
+          # Parfois GitHub dit "unstable status" juste après création:
+          # on retente 5 fois avec une petite pause.
+          for i in 1 2 3 4 5; do
+            if gh pr merge "$PR_NUMBER" --auto --merge; then
+              echo "Auto-merge enabled."
+              exit 0
+            fi
+            echo "Auto-merge not ready yet, retry $i/5..."
+            sleep 3
+          done
+
+          echo "Auto-merge could not be enabled now (will still be mergeable manually)."
+          exit 0
