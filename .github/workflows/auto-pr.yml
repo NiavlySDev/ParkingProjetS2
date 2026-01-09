@@ -1,4 +1,4 @@
-﻿name: Auto PR to main
+name: Auto PR to main
 
 on:
   push:
