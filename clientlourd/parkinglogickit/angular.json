@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "parkingProjetS2": {
+    "parkinglogickit": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "parkingProjetS2:build:production"
+              "buildTarget": "parkinglogickit:build:production"
             },
             "development": {
-              "buildTarget": "parkingProjetS2:build:development"
+              "buildTarget": "parkinglogickit:build:development"
             }
           },
           "defaultConfiguration": "development"

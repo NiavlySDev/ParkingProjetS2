@@ -5,12 +5,12 @@
 
   <parent>
     <groupId>lml.snir</groupId>
-    <artifactId>parking</artifactId>
+    <artifactId>parkinglogickit</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>parking-common</artifactId>
-  <name>Parking - Common</name>
+  <artifactId>parkinglogickit-common</artifactId>
+  <name>ParkingLogicKit - Common</name>
   <packaging>jar</packaging>
 </project>

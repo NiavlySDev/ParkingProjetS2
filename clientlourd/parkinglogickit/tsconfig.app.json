@@ -3,13 +3,13 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./out-tsc/spec",
-    "types": [
-      "vitest/globals"
-    ]
+    "outDir": "./out-tsc/app",
+    "types": []
   },
   "include": [
-    "src/**/*.d.ts",
-    "src/**/*.spec.ts"
+    "../parkingProjetS2/src/**/*.ts"
+  ],
+  "exclude": [
+    "../parkingProjetS2/src/**/*.spec.ts"
   ]
 }

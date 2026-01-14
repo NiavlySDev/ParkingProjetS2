@@ -5,19 +5,19 @@
 
   <parent>
     <groupId>lml.snir</groupId>
-    <artifactId>parking</artifactId>
+    <artifactId>parkinglogickit</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>parking-physique</artifactId>
-  <name>Parking - Physique</name>
+  <artifactId>parkinglogickit-physique</artifactId>
+  <name>ParkingLogicKit - Physique</name>
   <packaging>jar</packaging>
 
   <dependencies>
     <dependency>
       <groupId>lml.snir</groupId>
-      <artifactId>parking-metier</artifactId>
+      <artifactId>parkinglogickit-metier</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>

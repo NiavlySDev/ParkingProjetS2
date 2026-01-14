@@ -7,8 +7,8 @@ $ErrorActionPreference = "Stop"
 
 # --- Always compute repo root from THIS script location (never from current folder) ---
 $ScriptPath = $MyInvocation.MyCommand.Path
-$ScriptDir  = Split-Path -Parent $ScriptPath                 # ...\ParkingProjetS2\scripts
-$RepoRoot   = (Get-Item (Join-Path $ScriptDir "..")).FullName # ...\ParkingProjetS2
+$ScriptDir  = Split-Path -Parent $ScriptPath                 # ...\ParkingLogicKit\scripts
+$RepoRoot   = (Get-Item (Join-Path $ScriptDir "..")).FullName # ...\ParkingLogicKit
 
 $Branches = @("sylvain","phily","ethan","virgile")
 

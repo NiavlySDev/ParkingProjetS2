@@ -5,19 +5,19 @@
 
   <parent>
     <groupId>lml.snir</groupId>
-    <artifactId>parking</artifactId>
+    <artifactId>parkinglogickit</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>parking-metier</artifactId>
-  <name>Parking - Metier</name>
+  <artifactId>parkinglogickit-metier</artifactId>
+  <name>ParkingLogicKit - Metier</name>
   <packaging>jar</packaging>
 
   <dependencies>
     <dependency>
       <groupId>lml.snir</groupId>
-      <artifactId>parking-common</artifactId>
+      <artifactId>parkinglogickit-common</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>
