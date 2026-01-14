@@ -4,11 +4,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>lml.snir</groupId>
-  <artifactId>parking</artifactId>
+  <artifactId>parkinglogickit</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>Parking</name>
+  <name>ParkingLogicKit</name>
 
   <modules>
     <module>common</module>
