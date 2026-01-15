@@ -23,7 +23,9 @@ jobs:
 
       - name: Install LML dependencies
         run: |
-          cd libs/libLML
+          cd libs
+          mvn clean install -DskipTests -N
+          cd libLML
           mvn clean install -DskipTests
           cd ../..
 
