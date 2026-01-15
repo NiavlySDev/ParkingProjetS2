@@ -20,18 +20,18 @@
       <artifactId>parkinglogickit-common</artifactId>
       <version>${project.version}</version>
     </dependency>
-    <!--dependency>
-      <groupId>lml.snir.parkinglogicmanager</groupId>
-      <artifactId>ParkingLogicManagerCommon</artifactId>
-      <version>1.0</version>
+    <dependency>
+      <groupId>lml.snir</groupId>
+      <artifactId>parkinglogickit-common</artifactId>
+      <version>${project.version}</version>
       <type>jar</type>
-    </dependency-->
-    <!--dependency>
-      <groupId>lml.snir.parkinglogicmanager</groupId>
-      <artifactId>ParkingLogicManagerPhysique</artifactId>
-      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>lml.snir</groupId>
+      <artifactId>parkinglogickit-physique</artifactId>
+      <version>${project.version}</version>
       <type>jar</type>
-    </dependency-->
+    </dependency>
     <dependency>
       <groupId>lml.snir.rest</groupId>
       <artifactId>LMLRestServer</artifactId>
