@@ -1,4 +1,5 @@
 package lml.snir.parklogickit.metier.entity;
+
 import jakarta.persistence.Column;
 import java.io.Serializable;
 import java.util.Objects;
@@ -13,10 +14,11 @@ import jakarta.persistence.Id;
  */
 @Entity
 public class Badge implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(nullable = false)
     private String content;
 
@@ -33,7 +35,7 @@ public class Badge implements Serializable {
         if (object == null) {
             return false;
         }
-        
+
         // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Badge)) {
             return false;
@@ -70,5 +72,5 @@ public class Badge implements Serializable {
     public void setContent(String content) {
         this.content = content;
     }
-    
+
 }

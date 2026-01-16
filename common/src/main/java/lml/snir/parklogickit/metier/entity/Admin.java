@@ -11,7 +11,7 @@ import java.io.Serializable;
  */
 @Entity
 @DiscriminatorValue("Admin")
-public class Admin extends Person implements Serializable {
-  
+public class Admin extends Driver implements Serializable {
+
 
 }
