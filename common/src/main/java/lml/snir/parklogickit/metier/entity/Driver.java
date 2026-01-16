@@ -15,11 +15,10 @@ import java.io.Serializable;
  *
  * @author ethan
  */
-
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="TYPE", discriminatorType = DiscriminatorType.STRING)
-public class Person implements Serializable {
+@DiscriminatorColumn(name = "TYPE", discriminatorType = DiscriminatorType.STRING)
+public class Driver implements Serializable {
 
     /**
      * @return the password
@@ -92,18 +91,18 @@ public class Person implements Serializable {
     public void setId(long id) {
         this.id = id;
     }
-    
+
     @Override
     public String toString() {
         String genre = "M.";
         if (!this.isIsMale()) {
             genre = "Mme";
         }
-        
+
         String str = genre + " " + this.getFirstName() + " " + this.getSurname();
-        
+
         if (this.getClass() == Admin.class) {
-            str += " (Administrator)";
+            str += " (Admin)";
         }
         return str;
     }
