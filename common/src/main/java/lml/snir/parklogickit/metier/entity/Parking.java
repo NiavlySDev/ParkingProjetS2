@@ -47,8 +47,16 @@ public class Parking implements Serializable {
     public void setCountPlace(int CountPlace) {
         this.CountPlace = CountPlace;
     }
-    
-    
+
+    public void incrementPlaceCount() {
+        this.CountPlace++;
+    }
+
+    public void decrementPlaceCount() {
+        if (this.CountPlace > 0) {
+            this.CountPlace--;
+        }
+    }
 
     @Override
     public int hashCode() {
@@ -74,5 +82,5 @@ public class Parking implements Serializable {
     public String toString() {
         return "lml.snir.parklogickit.metier.entity.Parking[ id=" + id + " ]";
     }
-    
+
 }
