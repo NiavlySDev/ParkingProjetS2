@@ -7,4 +7,9 @@
 .DS_Store
 Thumbs.db
 /common/target/
+<<<<<<< HEAD
 /serveurweb/target/
+=======
+/metier/target/
+/physique/target/
+>>>>>>> origin/main
