@@ -18,7 +18,7 @@ import java.io.Serializable;
  * @author virgile, sylvain
 >>>>>>> ee7b45e77baec9b0234ef035ed3a16da927d2d0b
  */
-@Entity
+EventEntity
 public class Parking implements Serializable {
     private static final long serialVersionUID = 1L;
     
