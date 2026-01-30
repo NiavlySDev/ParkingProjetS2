@@ -16,14 +16,14 @@ public class Test {
     //private final LocalDataService localSrv;
     private final DriverDataService usrSrv;
     private final BadgeDataService badgeSrv;
-    private final AssociateDataService attrSrv;
+    private final AssociateDataService assoSrv;
 
     public static void main(String[] args) throws Exception {
         Test test = new Test();
         test.populate();   
         //test.testTemperature();
         //test.testAttribution();
-        //test.testUtilisateur();
+        test.testUtilisateur();
     }
 
     private Test() throws Exception {
@@ -31,7 +31,7 @@ public class Test {
         //this.tempSrv = PhysiqueDataFactory.getTemperatureDataService();
         this.usrSrv = PhysiqueDataFactory.getDriverDataService();
         this.badgeSrv = PhysiqueDataFactory.getBadgeDataService();
-        this.attrSrv = PhysiqueDataFactory.getAssociateDataService();
+        this.assoSrv = PhysiqueDataFactory.getAssociateDataService();
     }
 
     private void populate() throws Exception {
@@ -39,15 +39,15 @@ public class Test {
     }
 
     private void populateDriver() throws Exception {
-        Driver usr;
+        Driver drv;
 
-        usr = new Admin();
-        usr.setFirstName("homer");
-        usr.setIsMale(true);
-        usr.setUsername("HS");
-        usr.setSurname("Simpson");
-        usr.setPassword("secret");
-        this.usrSrv.add(usr);
+        drv = new Admin();
+        drv.setFirstName("homer");
+        drv.setIsMale(true);
+        drv.setUsername("HS");
+        drv.setSurname("Simpson");
+        drv.setPassword("secret");
+        this.usrSrv.add(drv);
 
         Badge b = new Badge();
         b.setContent("0014511054");
@@ -61,21 +61,21 @@ public class Test {
         b.setContent("0009966230");
         b = this.badgeSrv.add(b);
 
-        Associate attr = new Associate();
-        attr.setBadge(b);
-        attr.setUtilisateur(usr);
-        attr = this.attrSrv.add(attr);
+        Associate asso = new Associate();
+        asso.setBadge(b);
+        asso.setUtilisateur(drv);
+        asso = this.assoSrv.add(asso);
 
-        usr = new Driver();
-        usr.setFirstName("Marge");
-        usr.setIsMale(false);
-        usr.setUsername("MS");
-        usr.setSurname("Simpson");
-        usr.setPassword("secret");
-        this.usrSrv.add(usr);
+        drv = new Driver();
+        drv.setFirstName("Marge");
+        drv.setIsMale(false);
+        drv.setUsername("MS");
+        drv.setSurname("Simpson");
+        drv.setPassword("secret");
+        this.usrSrv.add(drv);
     }
-
-    /**
+/**
+    
     private void populateLocaux() throws Exception {
         Local l = new Local();
         l.setNumero(458L);
@@ -192,12 +192,12 @@ public class Test {
         }
     }
     **/
-   /** 
+   
     private void testUtilisateur() throws Exception {
-        List<Driver> users = this.usrSrv.getAll();
-        for (Driver u : users) {
+        List<Driver> drivers = this.usrSrv.getAll();
+        for (Driver u : drivers) {
             System.out.println(u);
         }
     }
-    **/
+    
 }
