@@ -1,6 +1,5 @@
 export enum DriverType {
-    Maintenance,
-    Administrator,
-    Driver,
-  }
-  
+  Maintenance,
+  Administrator,
+  Driver,
+}
