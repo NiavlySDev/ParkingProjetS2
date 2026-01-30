@@ -1,7 +1,7 @@
 package lml.snir.parklogickit.metier.transactionel;
 
 import java.util.List;
-import lml.snir.parklogickit.metier.entity.Badge;
+import lml.snir.parkinglogickit.metier.entity.Badge;
 import lml.snir.persistence.CrudService;
 
 /**
