@@ -3,6 +3,7 @@ package lml.snir.parkinglogickit.metier.entity;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import java.io.Serializable;
+import lml.snir.parkinglogickit.metier.entity.Admin;
 
 /**
  *

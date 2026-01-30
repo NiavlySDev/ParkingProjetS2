@@ -2,13 +2,13 @@ package lml.snir.parkinglogickit.physique.data;
 
 /**
  *
- * @author virgile
+ * @author fanou
  */
 public final class PhysiqueDataFactory {
     private PhysiqueDataFactory() {
     }
 
-    private static final String PU = "lml.snir.parkinglogicmanager_ParkingLogicManagerCommon_jar_1.0PU";
+    private static final String PU = "lml.snir.ParkingLogicKitCommon_jar_1.0PU";
     private static final boolean JDBC = false;
 
     private static DriverDataService usrSrv = null;
@@ -37,17 +37,17 @@ public final class PhysiqueDataFactory {
         return badgeSrv;
     }
     
-    private static AssociateDataService attributionSrv = null;
+    private static AssociateDataService associateSrv = null;
     public static synchronized AssociateDataService getAssociateDataService() throws Exception {
-        if (attributionSrv == null) {
+        if (associateSrv == null) {
             if (JDBC) {
                //attributionSrv = new AssociateDataServiceImpl();
             } else {
-                attributionSrv = new AssociateDataServiceImpl(PU);
+                associateSrv = new AssociateDataServiceImpl(PU);
             }
         }
 
-        return attributionSrv;
+        return associateSrv;
     }
 /**
     private static LocalDataService localSrv = null;
