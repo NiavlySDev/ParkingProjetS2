@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { RestServer } from '../../../Rest/RestServer';
 import { Driver } from '../../../Auth/Driver.js';
 
+// author Ethan
+
 @Component({
   selector: 'app-sign-up',
   imports: [FormsModule, CommonModule],
