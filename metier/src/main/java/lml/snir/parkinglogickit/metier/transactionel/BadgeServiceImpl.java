@@ -1,55 +1,60 @@
-package lml.snir.parklogickit.metier.transactionel;
+package lml.snir.parkinglogickit.metier.transactionel;
 
 import java.util.List;
 
 
-import lml.snir.parklogickit.metier.entity.Event;
-//import lml.snir.parklogickit.data.EventDataService;
+import lml.snir.parklogickit.metier.entity.Badge;
+import lml.snir.parklogickit.metier.transactionel.BadgeService;
+//import lml.snir.parklogickit.data.BadgeDataService;
 
 
 /**
  *
  * @author fanou
  */
-public class EventServiceImpl implements EventService {
-//    private final EventDataService eventDataSrv;
+public class BadgeServiceImpl implements BadgeService {
+//    private final BadgeDataService badgeDataSrv;
 //    
-//    public EventServiceImpl() throws Exception {
-//        this.eventDataSrv = PhysiqueDataFactory.getEventDataService();
+//    public BadgeServiceImpl() throws Exception {
+//        this.badgeDataSrv = PhysiqueDataFactory.getBadgeDataService();
 //    }
 
-
-
-
+    
 
     @Override
-    public Event getById(long id) throws Exception {
+    public Badge getById(Long id) throws Exception {
         return null;
-//         return this.eventDataSrv.getById(id);
+//        return this.badgeDataSrv.getById(id);
     }
-    @Override
-    public Event getByIsEntered(boolean attribue) throws Exception {
+
+
+    public Badge getByContent(String content) throws Exception {
         return null;
-//      return this.eventDataSrv.getByEntered();
+//        return this.badgeDataSrv.getByContent(content);
     }
 
     @Override
-    public Event add(Event t) throws Exception {
+    public Badge getById(long id) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void remove(Event t) throws Exception {
+    public Badge getByContent(boolean attribue) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Event t) throws Exception {
+    public Badge add(Badge t) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Event getById(Long id) throws Exception {
+    public void remove(Badge t) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void update(Badge t) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -59,16 +64,15 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public List<Event> getAll() throws Exception {
+    public List<Badge> getAll() throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public List<Event> getAll(int begin, int count) throws Exception {
+    public List<Badge> getAll(int begin, int count) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 
- 
     
 }

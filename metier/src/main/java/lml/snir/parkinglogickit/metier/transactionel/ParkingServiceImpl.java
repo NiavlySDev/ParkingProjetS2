@@ -1,59 +1,66 @@
-package lml.snir.parklogickit.metier.transactionel;
+package lml.snir.parkinglogickit.metier.transactionel;
 
 import java.util.List;
 
 
-import lml.snir.parklogickit.metier.entity.Badge;
-//import lml.snir.parklogickit.data.BadgeDataService;
+import lml.snir.parklogickit.metier.entity.Parking;
+import lml.snir.parklogickit.metier.transactionel.ParkingService;
+//import lml.snir.parklogickit.data.ParkingDataService;
 
 
 /**
  *
  * @author fanou
  */
-public class BadgeServiceImpl implements BadgeService {
-//    private final BadgeDataService badgeDataSrv;
+public final class ParkingServiceImpl implements ParkingService {
+//    private final ParkingDataService prkDataSrv;
 //    
-//    public BadgeServiceImpl() throws Exception {
-//        this.badgeDataSrv = PhysiqueDataFactory.getBadgeDataService();
+//    public ParkingServiceImpl() throws Exception {
+//        this.prkDataSrv = PhysiqueDataFactory.getParkingDataService();
 //    }
 
-    
-
     @Override
-    public Badge getById(Long id) throws Exception {
+    public Parking getById(long id) throws Exception {
         return null;
-//        return this.badgeDataSrv.getById(id);
+//       return this.prkDataSrv.getById(id);
     }
 
-
-    public Badge getByContent(String content) throws Exception {
+   
+     
+    @Override
+    public Parking getByIsFull(boolean attribue) throws Exception {
         return null;
-//        return this.badgeDataSrv.getByContent(content);
+//      return this.prkDataSrv.getByIsFull();
     }
 
     @Override
-    public Badge getById(long id) throws Exception {
+    public Parking getByCountPlace(int contenu) throws Exception {
+        return null;
+//      return this.prkDataSrv.getByCountPlace();
+    }
+
+    @Override
+    public Parking getByUsername(String contenu) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Badge getByContent(boolean attribue) throws Exception {
+    public Parking add(Parking t) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public Badge add(Badge t) throws Exception {
+    public void remove(Parking t) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void remove(Badge t) throws Exception {
+    public void update(Parking t) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void update(Badge t) throws Exception {
+    public Parking getById(Long id) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -63,15 +70,18 @@ public class BadgeServiceImpl implements BadgeService {
     }
 
     @Override
-    public List<Badge> getAll() throws Exception {
+    public List<Parking> getAll() throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public List<Badge> getAll(int begin, int count) throws Exception {
+    public List<Parking> getAll(int begin, int count) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+
+    
+  
 
     
 }
