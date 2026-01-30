@@ -3,7 +3,7 @@ package lml.snir.parkinglogickit.metier.transactionel;
 import java.util.List;
 
 
-import lml.snir.parklogickit.metier.entity.Admin;
+import lml.snir.parkinglogickit.metier.entity.Admin;
 //import lml.snir.parklogickit.data.AdminDataService;
 
 /**
