@@ -1,0 +1,334 @@
+/* =========================
+   RESET + BASE
+   ========================= */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* =========================
+     SIGN-UP - CENTRAGE GLOBAL
+     ========================= */
+  .sign-up {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa, #e4ecf5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2c3e50;
+    overflow-x: hidden;
+    padding: 20px;
+  }
+  
+  /* =========================
+     CARD PRINCIPALE
+     ========================= */
+  .sign-up-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 50px 45px;
+    border-radius: 18px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  /* =========================
+     TITRE
+     ========================= */
+  .sign-up-title {
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
+    margin-bottom: 35px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    color: #2c3e50;
+    text-transform: capitalize;
+    animation: slideDown 0.6s ease-out;
+  }
+  
+  /* =========================
+     FORMULAIRE
+     ========================= */
+  .sign-up-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    animation: fadeIn 0.8s ease-out 0.2s backwards;
+  }
+  
+  /* =========================
+     GROUPE DE CHAMPS
+     ========================= */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  /* =========================
+     LABELS
+     ========================= */
+  .form-label {
+    font-size: clamp(0.9rem, 2vw, 0.95rem);
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 4px;
+  }
+  
+  /* =========================
+     INPUTS ET SELECT
+     ========================= */
+  .form-input {
+    padding: 13px 18px;
+    font-size: clamp(0.95rem, 2.5vw, 1rem);
+    color: #2c3e50;
+    border: 2px solid #e4ecf5;
+    border-radius: 10px;
+    background-color: #f8fafc;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+  
+  .form-input:focus {
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    transform: translateY(-1px);
+  }
+  
+  .form-input::placeholder {
+    color: #94a3b8;
+  }
+  
+  /* SELECT SPÉCIFIQUE */
+  select.form-input {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='%232c3e50' d='M7 10L2 5h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    padding-right: 45px;
+  }
+  
+  /* =========================
+     ACTIONS / BOUTON
+     ========================= */
+  .form-actions {
+    margin-top: 15px;
+    animation: fadeIn 0.8s ease-out 0.4s backwards;
+  }
+  
+  .btn-submit {
+    width: 100%;
+    padding: 15px 30px;
+    font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+    font-weight: 600;
+    color: #ffffff;
+    background: #3b82f6;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+  }
+  
+  .btn-submit:hover:not(:disabled) {
+    transform: translateY(-3px);
+    background: #2563eb;
+    box-shadow: 0 12px 28px rgba(59, 130, 246, 0.4);
+  }
+  
+  .btn-submit:active:not(:disabled) {
+    transform: translateY(-1px);
+  }
+  
+  .btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* =========================
+     MESSAGES
+     ========================= */
+  .message {
+    margin-top: 25px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: clamp(0.9rem, 2vw, 0.95rem);
+    font-weight: 500;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .message-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 2px solid #6ee7b7;
+  }
+  
+  .message-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 2px solid #fca5a5;
+  }
+  
+  .message-info {
+    background-color: #dbeafe;
+    color: #1e40af;
+    border: 2px solid #93c5fd;
+  }
+  
+  .message-warning {
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 2px solid #fcd34d;
+  }
+  
+  /* =========================
+     ANIMATIONS
+     ========================= */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* =========================
+     RESPONSIVE TABLETTE
+     ========================= */
+  @media (max-width: 992px) {
+    .sign-up-card {
+      padding: 45px 40px;
+      max-width: 550px;
+    }
+  
+    .sign-up-title {
+      margin-bottom: 30px;
+    }
+  
+    .sign-up-form {
+      gap: 20px;
+    }
+  }
+  
+  /* =========================
+     RESPONSIVE MOBILE
+     ========================= */
+  @media (max-width: 768px) {
+    .sign-up {
+      padding: 15px;
+    }
+  
+    .sign-up-card {
+      padding: 40px 30px;
+      border-radius: 12px;
+    }
+  
+    .sign-up-title {
+      margin-bottom: 28px;
+    }
+  
+    .sign-up-form {
+      gap: 18px;
+    }
+  
+    .form-input {
+      padding: 12px 16px;
+    }
+  
+    .btn-submit {
+      padding: 14px 26px;
+    }
+  }
+  
+  /* =========================
+     RESPONSIVE PETITS MOBILES
+     ========================= */
+  @media (max-width: 480px) {
+    .sign-up {
+      padding: 10px;
+    }
+  
+    .sign-up-card {
+      padding: 30px 20px;
+    }
+  
+    .sign-up-title {
+      font-size: 1.6rem;
+      margin-bottom: 25px;
+    }
+  
+    .sign-up-form {
+      gap: 16px;
+    }
+  
+    .form-label {
+      font-size: 0.9rem;
+    }
+  
+    .form-input {
+      padding: 11px 14px;
+      font-size: 0.95rem;
+    }
+  
+    .btn-submit {
+      padding: 13px 22px;
+      font-size: 0.95rem;
+    }
+  
+    .message {
+      padding: 12px 16px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* =========================
+     RESPONSIVE GRANDS ÉCRANS
+     ========================= */
+  @media (min-width: 1400px) {
+    .sign-up-card {
+      max-width: 650px;
+      padding: 60px 55px;
+    }
+  
+    .sign-up-title {
+      font-size: 2.4rem;
+      margin-bottom: 40px;
+    }
+  
+    .sign-up-form {
+      gap: 24px;
+    }
+  
+    .form-label {
+      font-size: 1rem;
+    }
+  
+    .form-input {
+      padding: 14px 20px;
+      font-size: 1.05rem;
+    }
+  
+    .btn-submit {
+      padding: 16px 32px;
+      font-size: 1.1rem;
+    }
+  }

@@ -94,17 +94,18 @@
   
         <!-- Type utilisateur -->
         <div class="form-group">
-          <label for="userType" class="form-label">Type d'utilisateur</label>
+          <label for="DriverType" class="form-label">Type d'utilisateur</label>
           <select
-            id="userType"
+            id="DriverType"
             class="form-input"
-            [(ngModel)]="userType"
-            name="userType"
+            [(ngModel)]="DriverType"
+            name="DriverType"
             required
           >
             <option [ngValue]="null" disabled>Sélectionnez un type</option>
             <option [ngValue]="0">Administrator</option>
-            <option [ngValue]="1">Agent</option>
+            <option [ngValue]="1">Driver</option>
+            <option [ngValue]="2">Maintenance</option>
           </select>
         </div>
   

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RestServer } from '../../../Rest/RestServer';
+import { Driver } from '../../../Auth/Driver.js';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,18 +11,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './sign-up.css',
 })
 export class signUp {
-
   firstname: string = '';
   surname: string = '';
   login: string = '';
   password: string = '';
   age: number | null = null;
-  
+
   // devient un booléen pour la structure "isMasculin"
   isMasculin: boolean | null = null;
 
   // sert seulement à déterminer la classe envoyée
- DriverType: number | null = null;
+  DriverType: number | null = null;
 
   isLoading: boolean = false;
   message: string = '';
@@ -29,15 +30,21 @@ export class signUp {
   constructor(private restServer: RestServer) {}
 
   onSubmit(): void {
-
-    if (!this.firstname || !this.surname || !this.login || !this.password ||
-        this.age === null || this.isMasculin === null || this DriverType === null) {
+    if (
+      !this.firstname ||
+      !this.surname ||
+      !this.login ||
+      !this.password ||
+      this.age === null ||
+      this.isMasculin === null ||
+      this.DriverType === null
+    ) {
       this.setMessage('Tous les champs sont obligatoires', 'error');
       return;
     }
 
-    if (this.age < 1 || this.age > 120) {
-      this.setMessage('L\'âge doit être entre 1 et 120 ans', 'error');
+    if (this.age === null || this.age! < 1 || this.age! > 120) {
+      this.setMessage("L'âge doit être entre 1 et 120 ans", 'error');
       return;
     }
 
@@ -45,11 +52,11 @@ export class signUp {
     this.message = '';
 
     // Détermination de la classe Java
-    const DriverClass = this DriverType === 0
-      ? 'lml.snir.gestiontemperature.metier.entity.Administrator'
-      : 'lml.snir.gestiontemperature.metier.entity.Driver';
+    const DriverClass =
+      this.DriverType === 0
+        ? 'lml.snir.ParkingLogicKit.metier.entity.Administrator'
+        : 'lml.snir.ParkingLogicKit.metier.entity.Driver';
 
-    // Structure EXACTE conforme à ton exemple
     const DriverData: any = {
       id: 0,
       name: this.surname,
@@ -57,24 +64,28 @@ export class signUp {
       login: this.login,
       password: this.password,
       age: this.age,
-      isMasculin: this.isMasculin,   // booléen !
-      class: DriverClass
+      isMasculin: this.isMasculin,
+      class: DriverClass,
     };
 
-    console.log('JSON envoyé:', JSON.stringify DriverData, null, 2));
+    console.log('JSON envoyé:', JSON.stringify(DriverData, null, 2));
 
-    this.restServer.getUtilisateurService().add DriverData as Driver).subscribe({
-      next: (response: Driver) => {
-        this.isLoading = false;
-        this.setMessage('Sign-up réussie!', 'success');
-        this.resetForm();
-      },
-      error: (error: any) => {
-        this.isLoading = false;
-        const msg = error.error?.message || error.message || 'Une erreur s\'est produite lors de l\'Sign-up';
-        this.setMessage(msg, 'error');
-      }
-    });
+    this.restServer
+      .getDriverService()
+      .add(DriverData as Driver)
+      .subscribe({
+        next: (response: Driver) => {
+          this.isLoading = false;
+          this.setMessage('Sign-up réussie!', 'success');
+          this.resetForm();
+        },
+        error: (error: any) => {
+          this.isLoading = false;
+          const msg =
+            error.error?.message || error.message || "Une erreur s'est produite lors de l'Sign-up";
+          this.setMessage(msg, 'error');
+        },
+      });
   }
 
   private setMessage(message: string, type: 'success' | 'error'): void {
@@ -89,6 +100,6 @@ export class signUp {
     this.password = '';
     this.age = null;
     this.isMasculin = null;
-    this DriverType = null;
+    this.DriverType = null;
   }
 }
