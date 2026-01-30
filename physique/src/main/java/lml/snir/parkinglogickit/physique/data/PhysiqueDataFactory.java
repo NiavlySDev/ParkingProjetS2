@@ -1,15 +1,14 @@
 package lml.snir.parkinglogickit.physique.data;
 
 /**
- * qxZEALmd-Cfux6V3 gestiontemperature
  *
- * @author fanou
+ * @author virgile
  */
 public final class PhysiqueDataFactory {
     private PhysiqueDataFactory() {
     }
 
-    private static final String PU = "lml.snir.parkinglogickit_ParkingLogicKitCommon_jar_1.0PU";
+    private static final String PU = "lml.snir.parkinglogicmanager_ParkingLogicManagerCommon_jar_1.0PU";
     private static final boolean JDBC = false;
 
     private static DriverDataService usrSrv = null;

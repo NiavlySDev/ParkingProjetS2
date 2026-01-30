@@ -19,7 +19,8 @@ public class DriverDataServiceJPAImpl extends AbstracCrudServiceJPA<Driver> impl
         super(PU);
     }
 
-    public Driver getUsername(String username) throws Exception {
+    @Override
+    public Driver getBySurname(String username) throws Exception {
         Driver user = null;
         try {
             this.open();
@@ -46,11 +47,6 @@ public class DriverDataServiceJPAImpl extends AbstracCrudServiceJPA<Driver> impl
 
     @Override
     public Driver getByFirstname(String contenu) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public Driver getBySurname(String contenu) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

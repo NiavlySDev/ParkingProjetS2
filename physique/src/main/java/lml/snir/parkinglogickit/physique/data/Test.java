@@ -35,9 +35,10 @@ public class Test {
     }
 
     private void populate() throws Exception {
+        this.populateDriver();
     }
 
-    private void populateUtilisateurs() throws Exception {
+    private void populateDriver() throws Exception {
         Driver usr;
 
         usr = new Admin();

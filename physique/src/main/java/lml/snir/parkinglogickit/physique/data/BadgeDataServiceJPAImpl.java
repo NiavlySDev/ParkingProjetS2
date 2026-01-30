@@ -20,7 +20,8 @@ public class BadgeDataServiceJPAImpl extends AbstracCrudServiceJPA<Badge> implem
         super(PU);
     }
     
-    public Badge getByContenu(String contenu) throws Exception {
+    @Override
+    public Badge getByContent(String contenu) throws Exception {
         Badge badge;
         try {
             this.open();
@@ -36,6 +37,7 @@ public class BadgeDataServiceJPAImpl extends AbstracCrudServiceJPA<Badge> implem
         return badge;
     }
 
+    @Override
     public List<Badge> getByAssociate(boolean attribue) throws Exception {
         List<Badge> badges;
         try {
@@ -57,13 +59,4 @@ public class BadgeDataServiceJPAImpl extends AbstracCrudServiceJPA<Badge> implem
         return badges;
     }
 
-    @Override
-    public Badge getById(long id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public Badge getByContent(boolean attribue) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
