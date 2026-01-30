@@ -13,7 +13,7 @@ export interface Badge {
   providedIn: 'root',
 })
 export class BadgeService {
-  private apiUrl: string = '/GestionTemperatureServeur/rest/BadgeService';
+  private apiUrl: string = '/ParkingLogicKitServeur/rest/BadgeService';
 
   constructor(private http: HttpClient) {}
 

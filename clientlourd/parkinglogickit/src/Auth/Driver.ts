@@ -1,6 +1,6 @@
 import { DriverType as DriverType } from './DriverType';
 
-export class User {
+export class Driver {
   id: number;
 
   name: string;
