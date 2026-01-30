@@ -21,6 +21,7 @@ public class AssociateDataServiceImpl extends AbstracCrudServiceJPA<Associate> i
         super(PU);
     }
 
+    @Override
     public Associate getByBadge(Badge badge) throws Exception {
         Associate associate;
         try {
@@ -37,6 +38,7 @@ public class AssociateDataServiceImpl extends AbstracCrudServiceJPA<Associate> i
         return associate;
     }
 
+    @Override
     public Associate getByUtilisateur(Driver user) throws Exception {
         Associate associate;
         try {
