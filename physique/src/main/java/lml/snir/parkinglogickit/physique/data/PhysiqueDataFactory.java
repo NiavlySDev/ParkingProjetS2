@@ -2,7 +2,7 @@ package lml.snir.parkinglogickit.physique.data;
 
 /**
  *
- * @author fanou
+ * @author virgile
  */
 public final class PhysiqueDataFactory {
     private PhysiqueDataFactory() {
