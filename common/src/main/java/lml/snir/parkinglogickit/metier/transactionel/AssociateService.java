@@ -1,4 +1,4 @@
-package lml.snir.parklogickit.metier.transactionel;
+package lml.snir.parkinglogickit.metier.transactionel;
 
 //import lml.snir.parklogickit.metier.entity.Associate;
 import lml.snir.parklogickit.metier.entity.Badge;

@@ -4,7 +4,6 @@ import java.util.List;
 
 
 import lml.snir.parklogickit.metier.entity.Parking;
-import lml.snir.parklogickit.metier.transactionel.ParkingService;
 //import lml.snir.parklogickit.data.ParkingDataService;
 
 
