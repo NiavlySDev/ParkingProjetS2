@@ -4,7 +4,6 @@ import java.util.List;
 
 
 import lml.snir.parklogickit.metier.entity.Event;
-import lml.snir.parklogickit.metier.transactionel.EventService;
 //import lml.snir.parklogickit.data.EventDataService;
 
 
