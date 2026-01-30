@@ -4,10 +4,12 @@
  */
 package lml.snir.parkinglogickit.physique.data;
 
+import lml.snir.parkinglogickit.metier.transactionel.DriverService;
+
 /**
  *
  * @author virgile
  */
-public interface DriverDataService {
+public interface DriverDataService extends DriverService{
     
 }

@@ -46,24 +46,24 @@ public class Test {
         usr.setUsername("HS");
         usr.setSurname("Simpson");
         usr.setPassword("secret");
-        //this.usrSrv.add(usr);
+        this.usrSrv.add(usr);
 
         Badge b = new Badge();
         b.setContent("0014511054");
-        //b = this.badgeSrv.add(b);
+        b = this.badgeSrv.add(b);
 
         b = new Badge();
         b.setContent("0009803529");
-        //b = this.badgeSrv.add(b);
+        b = this.badgeSrv.add(b);
 
         b = new Badge();
         b.setContent("0009966230");
-        //b = this.badgeSrv.add(b);
+        b = this.badgeSrv.add(b);
 
         Associate attr = new Associate();
         attr.setBadge(b);
         attr.setUtilisateur(usr);
-        //attr = this.attrSrv.add(attr);
+        attr = this.attrSrv.add(attr);
 
         usr = new Driver();
         usr.setFirstName("Marge");
@@ -71,7 +71,7 @@ public class Test {
         usr.setUsername("MS");
         usr.setSurname("Simpson");
         usr.setPassword("secret");
-        //this.usrSrv.add(usr);
+        this.usrSrv.add(usr);
     }
 
     /**

@@ -4,10 +4,12 @@
  */
 package lml.snir.parkinglogickit.physique.data;
 
+import lml.snir.parkinglogickit.metier.transactionel.BadgeService;
+
 /**
  *
  * @author virgile
  */
-public interface BadgeDataService {
+public interface BadgeDataService extends BadgeService{
     
 }
