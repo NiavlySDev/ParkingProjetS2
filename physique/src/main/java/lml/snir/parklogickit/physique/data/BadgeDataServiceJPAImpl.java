@@ -7,7 +7,7 @@ package lml.snir.parklogickit.physique.data;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.Query;
 import java.util.List;
-import lml.snir.parklogickit.metier.entity.Badge;
+import lml.snir.parkinglogickit.metier.entity.Badge;
 import lml.snir.persistence.jpa.AbstracCrudServiceJPA;
 
 /**

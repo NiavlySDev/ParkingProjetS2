@@ -1,4 +1,4 @@
-package lml.snir.parklogickit.metier.entity;
+package lml.snir.parkinglogickit.metier.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

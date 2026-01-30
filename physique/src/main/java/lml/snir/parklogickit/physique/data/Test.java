@@ -1,8 +1,8 @@
 package lml.snir.parklogickit.physique.data;
 
-import lml.snir.parklogickit.metier.entity.Badge;
-import lml.snir.parklogickit.metier.entity.Driver;
-import lml.snir.parklogickit.metier.entity.Maintenance;
+import lml.snir.parkinglogickit.metier.entity.Badge;
+import lml.snir.parkinglogickit.metier.entity.Driver;
+import lml.snir.parkinglogickit.metier.entity.Maintenance;
 
 /**
  *

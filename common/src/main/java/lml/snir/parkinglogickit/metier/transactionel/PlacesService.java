@@ -1,6 +1,6 @@
 package lml.snir.parkinglogickit.metier.transactionel;
 
-import lml.snir.parklogickit.metier.entity.Places;
+import lml.snir.parkinglogickit.metier.entity.Places;
 import lml.snir.persistence.CrudService;
 
 /**

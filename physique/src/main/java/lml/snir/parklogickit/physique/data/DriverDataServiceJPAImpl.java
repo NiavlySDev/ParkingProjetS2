@@ -6,7 +6,7 @@ package lml.snir.parklogickit.physique.data;
 
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.Query;
-import lml.snir.parklogickit.metier.entity.Driver;
+import lml.snir.parkinglogickit.metier.entity.Driver;
 import lml.snir.persistence.jpa.AbstracCrudServiceJPA;
 
 /**
