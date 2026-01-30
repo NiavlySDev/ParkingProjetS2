@@ -8,14 +8,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-<<<<<<< HEAD
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import java.io.Serializable;
 import java.util.Objects;
-=======
-import java.io.Serializable;
->>>>>>> origin/main
 
 /**
  *
@@ -23,7 +19,6 @@ import java.io.Serializable;
  */
 @Entity
 public class Associate implements Serializable {
-<<<<<<< HEAD
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,13 +30,6 @@ public class Associate implements Serializable {
     @OneToOne
     @JoinColumn(nullable = false)
     private Driver driver;
-=======
-
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
->>>>>>> origin/main
 
     public Long getId() {
         return id;
@@ -50,43 +38,21 @@ public class Associate implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
-<<<<<<< HEAD
-    
+ 
     @Override
     public boolean equals(Object object) {
-        if (object == null) {
-            return false;
-        }
-        
-=======
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
->>>>>>> origin/main
         // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Associate)) {
             return false;
         }
         Associate other = (Associate) object;
-<<<<<<< HEAD
         if ((this.getId() == null && other.getId() != null) || (this.getId() != null && !this.id.equals(other.id))) {
-=======
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
->>>>>>> origin/main
             return false;
         }
         return true;
     }
 
     @Override
-<<<<<<< HEAD
     public int hashCode() {
         int hash = 5;
         hash = 79 * hash + Objects.hashCode(this.badge);
@@ -126,10 +92,4 @@ public class Associate implements Serializable {
     public void setUtilisateur(Driver utilisateur) {
         this.driver = utilisateur;
     }
-=======
-    public String toString() {
-        return "lml.snir.parklogickit.metier.entity.Associate[ id=" + id + " ]";
-    }
-    
->>>>>>> origin/main
 }
