@@ -29,6 +29,7 @@ public class Driver implements Serializable {
     private String username;
     private String password;
     private boolean isMale;
+    private int age;
 
     private Car car;
 
@@ -208,4 +209,13 @@ public class Driver implements Serializable {
         }
         return Objects.equals(this.password, other.password);
     }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+        
 }

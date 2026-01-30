@@ -42,6 +42,7 @@ public class Test {
         Driver drv;
 
         drv = new Admin();
+        drv.setAge(45);
         drv.setFirstName("homer");
         drv.setIsMale(true);
         drv.setUsername("HS");
@@ -67,6 +68,7 @@ public class Test {
         asso = this.assoSrv.add(asso);
 
         drv = new Driver();
+        drv.setAge(45);
         drv.setFirstName("Marge");
         drv.setIsMale(false);
         drv.setUsername("MS");
