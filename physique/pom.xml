@@ -15,11 +15,6 @@
   <packaging>jar</packaging>
 
   <dependencies>
-    <dependency>
-      <groupId>lml.snir</groupId>
-      <artifactId>parkinglogickit-metier</artifactId>
-      <version>${project.version}</version>
-    </dependency>
 
     <dependency>
       <groupId>lml.snir</groupId>

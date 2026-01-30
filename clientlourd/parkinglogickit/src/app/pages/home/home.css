@@ -94,7 +94,7 @@
     box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
     transition: all 0.3s ease;
     border: none;
-    min-width: 160px; /* Largeur minimale pour équilibre */
+    min-width: 160px;
   }
   
   ::ng-deep .actions .p-button:hover:not(:disabled) {
