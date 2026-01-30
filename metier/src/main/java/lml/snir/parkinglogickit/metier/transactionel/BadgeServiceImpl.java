@@ -4,7 +4,6 @@ import java.util.List;
 
 
 import lml.snir.parklogickit.metier.entity.Badge;
-import lml.snir.parklogickit.metier.transactionel.BadgeService;
 //import lml.snir.parklogickit.data.BadgeDataService;
 
 
